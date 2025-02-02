@@ -1,0 +1,232 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import Hero from './Hero';
+
+// Animation variants for fade-in & slide-up effect.
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+// Header component with navigation links.
+function Header() {
+  return (
+    <header className="bg-gray-800 text-white py-4">
+      <motion.nav 
+        className="container mx-auto flex justify-center gap-8"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+        transition={{ duration: 0.5 }}
+      >
+        <a href="#about" className="hover:underline">About</a>
+        <a href="#projects" className="hover:underline">Projects</a>
+        <a href="#resume" className="hover:underline">Resume</a>
+        <a href="#contact" className="hover:underline">Contact</a>
+      </motion.nav>
+    </header>
+  );
+}
+
+// About section with profile photo and introduction.
+function About() {
+  return (
+    <motion.section 
+      id="about" 
+      className="py-16 bg-gray-100"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={fadeInUp}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="container mx-auto px-4 flex flex-col items-center">
+        <h2 className="text-3xl font-bold mb-8">About Me</h2>
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          {/* Replace '/profile.jpg' with your actual image path */}
+          <motion.img 
+            src="1000170642.jpg" 
+            alt="Profile" 
+            className="w-40 h-40 rounded-full shadow-lg object-fill"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          />
+          <motion.p 
+            className="text-lg max-w-xl text-center md:text-left"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            Hi, I'm [Your Name]. I'm a [Your Profession/Passion], and welcome to my portfolio website.
+            I love building web applications and exploring new technologies.
+          </motion.p>
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
+// Projects section displaying a list of projects.
+function Projects() {
+  const projects = [
+    {
+      id: 1,
+      title: "Project One",
+      description: "This is a description of my first project.",
+      imageUrl: "./assets/1000170642.jpg", // Replace with your project image path.
+      link: "https://example.com/project-one",
+    },
+    {
+      id: 2,
+      title: "Project Two",
+      description: "This is a description of my second project.",
+      imageUrl: "/project2.jpg", // Replace with your project image path.
+      link: "https://example.com/project-two",
+    },
+    // Add more projects as needed.
+  ];
+
+  return (
+    <motion.section 
+      id="projects" 
+      className="py-16"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={fadeInUp}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <motion.div 
+              key={project.id} 
+              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: project.id * 0.2 }}
+            >
+              <img 
+                src={project.imageUrl} 
+                alt={project.title} 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="mb-4">{project.description}</p>
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-blue-500 hover:underline"
+                >
+                  View Project
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
+// Resume section.
+function Resume() {
+  return (
+    <motion.section 
+      id="resume" 
+      className="py-16 bg-white"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={fadeInUp}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-4">My Resume</h2>
+        <p className="text-lg mb-6">
+          Download my resume to learn more about my professional experience, skills, and education.
+        </p>
+        {/* Update the href to the path where your resume is stored */}
+        <a 
+          href="/your-resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="bg-blue-500 text-white px-6 py-3 rounded-full shadow hover:bg-blue-600 transition-colors"
+        >
+          Download Resume
+        </a>
+      </div>
+    </motion.section>
+  );
+}
+
+// Contact section for getting in touch.
+function Contact() {
+  return (
+    <motion.section 
+      id="contact" 
+      className="py-16 bg-gray-100"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={fadeInUp}
+      transition={{ duration: 0.7 }}
+    >
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-4">Contact Me</h2>
+        <motion.p 
+          className="text-lg"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          If you’d like to get in touch, please email me at:{" "}
+          <a href="mailto:youremail@example.com" className="text-blue-500 hover:underline">
+            youremail@example.com
+          </a>
+        </motion.p>
+      </div>
+    </motion.section>
+  );
+}
+
+// Footer component.
+function Footer() {
+  return (
+    <motion.footer 
+      className="bg-gray-800 text-white py-4 text-center"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <p>&copy; {new Date().getFullYear()} [Your Name]. All rights reserved.</p>
+    </motion.footer>
+  );
+}
+
+// Main App component.
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Hero/>
+      <main>
+        <About />
+        <Projects />
+        <Resume />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
