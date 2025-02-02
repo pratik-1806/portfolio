@@ -82,10 +82,10 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Project One",
-      description: "This is a description of my first project.",
-      imageUrl: "./assets/1000170642.jpg", // Replace with your project image path.
-      link: "https://example.com/project-one",
+      title: "Blog Application",
+      description: "This is my first project. Demonstrate skills in React and Node.js It may take some time to open because its deployed free may be in sleep.",
+      imageUrl: "blog-application.png", // Replace with your project image path.
+      link: "https://mern-blog-app-0dcs.onrender.com/",
     },
     {
       id: 2,
@@ -109,7 +109,7 @@ function Projects() {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
           {projects.map((project) => (
             <motion.div 
               key={project.id} 
@@ -119,11 +119,12 @@ function Projects() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: project.id * 0.2 }}
             >
-              <img 
-                src={project.imageUrl} 
-                alt={project.title} 
-                className="w-full h-48 object-cover"
-              />
+              <div className="transition-transform duration-300 hover:scale-103">
+                  <img
+          src={project.imageUrl}
+          alt='post cover'
+          className='h-[260px] w-full  object-center group-hover:h-[200px] transition-all duration-300 z-20'
+        />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="mb-4">{project.description}</p>
@@ -136,6 +137,8 @@ function Projects() {
                   View Project
                 </a>
               </div>
+              </div>
+              
             </motion.div>
           ))}
         </div>
