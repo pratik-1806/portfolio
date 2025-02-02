@@ -198,7 +198,7 @@ function Contact() {
         >
           If you’d like to get in touch, please email me at:{" "}
           <a href="mailto:youremail@example.com" className="text-blue-500 hover:underline">
-            youremail@example.com
+            ppratikpansare98@gmail.com
           </a>
         </motion.p>
       </div>
@@ -215,7 +215,7 @@ function Footer() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <p>&copy; {new Date().getFullYear()} [Your Name]. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Pratik Pansare All rights reserved.</p>
     </motion.footer>
   );
 }

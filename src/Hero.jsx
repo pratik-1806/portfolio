@@ -65,7 +65,7 @@ function Hero() {
           className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300  hover:scale-104"
           variants={childVariants}
         >
-          Learn More
+          Know More
         </motion.a>
       </div>
     </motion.section>
