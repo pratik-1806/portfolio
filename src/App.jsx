@@ -8,6 +8,8 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 }
 };
 
+const d = new Date(), y = d.getFullYear() - 2022, m = d.getMonth();
+
 // Header component with navigation links.
 function Header() {
   return (
@@ -19,10 +21,10 @@ function Header() {
         variants={fadeInUp}
         transition={{ duration: 0.5 }}
       >
-        <a href="#about" className="hover:underline">About</a>
-        <a href="#projects" className="hover:underline">Projects</a>
-        <a href="#resume" className="hover:underline">Resume</a>
-        <a href="#contact" className="hover:underline">Contact</a>
+        <a href="#about" className="hover:underline hover:font-bold hover:text-slate-300">About</a>
+        <a href="#projects" className="hover:underline hover:font-bold  hover:text-slate-300">Projects</a>
+        <a href="#resume" className="hover:underline hover:font-bold  hover:text-slate-300">Resume</a>
+        <a href="#contact" className="hover:underline hover:font-bold  hover:text-slate-300">Contact</a>
       </motion.nav>
     </header>
   );
@@ -54,14 +56,20 @@ function About() {
             viewport={{ once: true }}
           />
           <motion.p 
-            className="text-lg max-w-xl text-center md:text-left"
+            className="text-lg max-w-xl text-center md:text-left "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Hi, I'm [Your Name]. I'm a [Your Profession/Passion], and welcome to my portfolio website.
-            I love building web applications and exploring new technologies.
+            Experienced Senior Software Engineer with {`${y - (m < 0 ? 1 : 0)} years and ${(m + (m < 0 ? 12 : 0))} months`} experience in full-stack development,
+             specializing in Node.js backend and Angular frontend. Skilled in designing scalable RESTful APIs,
+              database management (SQL, NoSQL), authentication, and server-side logic, 
+              ensuring secure and efficient backend solutions. Equally proficient in modern frontend development, 
+              crafting dynamic, user-friendly UIs with Angular, responsive design, and seamless API integration. 
+              Strong in collaborative development, Agile methodologies, version control (Git), and problem-solving to deliver high-quality, 
+              scalable web applications. Passionate about building end-to-end solutions that enhance performance, security, 
+              and user experience.
           </motion.p>
         </div>
       </div>

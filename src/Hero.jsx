@@ -47,9 +47,9 @@ function Hero() {
       ></motion.div>
       
       {/* Content container */}
-      <div className="relative z-10 px-4">
+      <div className="relative z-10 px-4 ">
         <motion.h1 
-          className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg"
+          className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg hover:text-slate-200"
           variants={childVariants}
         >
           Hello, I'm Pratik Pansare
