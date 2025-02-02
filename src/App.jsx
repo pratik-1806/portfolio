@@ -43,20 +43,20 @@ function About() {
       transition={{ duration: 0.7 }}
     >
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h2 className="text-3xl font-bold mb-8">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <h2 className="text-3xl font-bold mb-8 transition-transform duration-300 hover:scale-105">About Me</h2>
+        <div className="flex flex-col md:flex-row items-center gap-8 ">
           {/* Replace '/profile.jpg' with your actual image path */}
           <motion.img 
             src="1000170642.jpg" 
             alt="Profile" 
-            className="w-40 h-40 rounded-full shadow-lg object-fill"
+            className="w-40 h-40 rounded-full shadow-lg object-fill transition-transform duration-300 hover:scale-103"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           />
           <motion.p 
-            className="text-lg max-w-xl text-center md:text-left "
+            className="text-sm max-w-xl text-center md:text-left  "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.7 }}

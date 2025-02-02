@@ -49,7 +49,7 @@ function Hero() {
       {/* Content container */}
       <div className="relative z-10 px-4 ">
         <motion.h1 
-          className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg hover:text-slate-200"
+          className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg hover:text-slate-200 transition-transform duration-300 hover:scale-101"
           variants={childVariants}
         >
           Hello, I'm Pratik Pansare
@@ -62,7 +62,7 @@ function Hero() {
         </motion.p>
         <motion.a 
           href="#about"
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
+          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300  hover:scale-104"
           variants={childVariants}
         >
           Learn More
