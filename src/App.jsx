@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './Hero';
 
 // Animation variants for fade-in & slide-up effect.
@@ -96,6 +96,13 @@ function Projects() {
     },
     // Add more projects as needed.
   ];
+  // State to track the currently selected project for the modal
+    const [selectedProject, setSelectedProject] = useState(null);
+  
+    // Handler to close the modal
+    const closeModal = () => {
+      setSelectedProject(null);
+    };
 
   return (
     <motion.section 
@@ -114,6 +121,7 @@ function Projects() {
             <motion.div 
               key={project.id} 
               className="bg-white rounded-lg shadow-lg overflow-hidden"
+              onClick={() => setSelectedProject(project)}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -143,7 +151,73 @@ function Projects() {
           ))}
         </div>
       </div>
+       {/* Modal Popup for Project Details */}
+       <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-lg p-8 relative max-w-3xl w-full mx-4"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl"
+              >
+                &times;
+              </button>
+              <img
+                src={selectedProject.imageUrl}
+                alt={selectedProject.title}
+                className="w-full h-64 object-cover rounded-lg mb-4"
+              />
+              <h3 className="text-2xl font-bold mb-2">
+                {selectedProject.title}
+              </h3>
+              <p className="mb-4">{selectedProject.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                <div>
+                  <strong>Frontend:</strong> {selectedProject.frontend}
+                </div>
+                <div>
+                  <strong>Backend:</strong> {selectedProject.backend}
+                </div>
+                <div>
+                  <strong>Database:</strong> {selectedProject.database}
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  GitHub Link
+                </a>
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-500 hover:underline"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
+    
   );
 }
 
@@ -174,6 +248,7 @@ function Resume() {
           Download Resume
         </a>
       </div>
+     
     </motion.section>
   );
 }
