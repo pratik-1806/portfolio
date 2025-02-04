@@ -155,13 +155,13 @@ function Projects() {
        <AnimatePresence>
         {selectedProject && (
           <motion.div
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+            className="fixed inset-0 flex items-center justify-center bg-slate-500 bg-opacity-50 z-50"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white rounded-lg p-8 relative max-w-3xl w-full mx-4"
+              className="bg-white rounded-lg p-8 relative max-w-4xl w-full mx-4"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -177,13 +177,13 @@ function Projects() {
               <img
                 src={selectedProject.imageUrl}
                 alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="w-full h-50 object-cover rounded-lg mb-4 p-1"
               />
               <h3 className="text-2xl font-bold mb-2">
                 {selectedProject.title}
               </h3>
               <p className="mb-4">{selectedProject.description}</p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+              <div className=" mb-4">
                 <div>
                   <strong>Frontend:</strong> {selectedProject.frontend}
                 </div>
