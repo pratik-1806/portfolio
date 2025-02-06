@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Hero from './Hero';
+import projects from './projects';
 
 // Animation variants for fade-in & slide-up effect.
 const fadeInUp = {
@@ -79,23 +80,23 @@ function About() {
 
 // Projects section displaying a list of projects.
 function Projects() {
-  const projects = [
-    {
-      id: 1,
-      title: "Blog Application",
-      description: "This is my first project. Demonstrate skills in React and Node.js It may take some time to open because its deployed free may be in sleep.",
-      imageUrl: "blog-application.png", // Replace with your project image path.
-      link: "https://mern-blog-app-0dcs.onrender.com/",
-    },
-    {
-      id: 2,
-      title: "Project Two",
-      description: "This is a description of my second project.",
-      imageUrl: "/project2.jpg", // Replace with your project image path.
-      link: "https://example.com/project-two",
-    },
-    // Add more projects as needed.
-  ];
+  // const projects = [
+  //   {
+  //     id: 1,
+  //     title: "Blog Application",
+  //     description: "This is my first project. Demonstrate skills in React and Node.js It may take some time to open because its deployed free may be in sleep.",
+  //     imageUrl: "blog-application.png", // Replace with your project image path.
+  //     link: "https://mern-blog-app-0dcs.onrender.com/",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Project Two",
+  //     description: "This is a description of my second project.",
+  //     imageUrl: "/project2.jpg", // Replace with your project image path.
+  //     link: "https://example.com/project-two",
+  //   },
+  //   // Add more projects as needed.
+  // ];
   // State to track the currently selected project for the modal
     const [selectedProject, setSelectedProject] = useState(null);
   
@@ -129,7 +130,7 @@ function Projects() {
             >
               <div className="transition-transform duration-300 hover:scale-103">
                   <img
-          src={project.imageUrl}
+          src={project.image}
           alt='post cover'
           className='h-[260px] w-full  object-center group-hover:h-[200px] transition-all duration-300 z-20'
         />
@@ -137,7 +138,7 @@ function Projects() {
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="mb-4">{project.description}</p>
                 <a 
-                  href={project.link} 
+                  href={project.liveDemo} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-blue-500 hover:underline"
@@ -175,7 +176,7 @@ function Projects() {
                 &times;
               </button>
               <img
-                src={selectedProject.imageUrl}
+                src={selectedProject.image}
                 alt={selectedProject.title}
                 className="w-full h-50 object-cover rounded-lg mb-4 p-1"
               />
@@ -204,7 +205,7 @@ function Projects() {
                   GitHub Link
                 </a>
                 <a
-                  href={selectedProject.link}
+                  href={selectedProject.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-green-500 hover:underline"
