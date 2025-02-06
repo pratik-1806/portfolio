@@ -241,7 +241,7 @@ function Resume() {
         </p>
         {/* Update the href to the path where your resume is stored */}
         <a 
-          href="/your-resume.pdf" 
+          href="https://drive.google.com/file/d/1Gsrq91t6INhJvyFtB1pbuRVctMOIpuES/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="bg-blue-500 text-white px-6 py-3 rounded-full shadow hover:bg-blue-600 transition-colors"
