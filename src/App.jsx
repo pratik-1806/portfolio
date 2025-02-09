@@ -176,13 +176,13 @@ function Projects() {
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-50 object-cover rounded-lg mb-4 p-1"
+                className="w-full h-50 object-cover rounded-lg mb-2 p-1"
               />
-              <h3 className="text-2xl font-bold mb-2">
+              <h3 className="text-xl font-bold mb-2">
                 {selectedProject.title}
               </h3>
-              <p className="mb-4">{selectedProject.description}</p>
-              <div className=" mb-4">
+              <p className="mb-2  text-sm">{selectedProject.description}</p>
+              <div className=" mb-2">
                 <div>
                   <strong>Frontend:</strong> {selectedProject.frontend}
                 </div>
