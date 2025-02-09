@@ -136,15 +136,13 @@ function Projects() {
         />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="mb-4">{project.description}</p>
-                <a 
-                  href={project.liveDemo} 
+                <p 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-blue-500 hover:underline"
                 >
-                  View Project
-                </a>
+                  Click here for details
+                </p>
               </div>
               </div>
               
