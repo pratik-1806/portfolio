@@ -3,7 +3,9 @@ const projects = [
       id:1,
       image: "e Library.png", // Replace with actual project image URL
       title: "E Library Application",
-      description: `The E Library Application is a comprehensive digital library management system built with Angular 17 and Tailwind CSS. It features user authentication (register and login), a dynamic navbar that displays user-specific information once logged in, and a complete book management module. Users can add new books (including cover image and PDF file uploads), view a list of available books, see detailed information for each book, update book details, and delete books with confirmation prompts. The project leverages nested routing for a clean organization of book-related pages, and includes a global loading indicator to improve the user experience during data fetches. The backend is implemented using Node.js and Express. For file uploading used Multer and Cloudinary, while MongoDB is used for data storage.`,
+      description: `The E Library Application is a comprehensive digital library system featuring secure user authentication and interactive book management.
+        The frontend is built with Angular 17 using standalone components, nested routing, and Tailwind CSS for a modern, responsive UI.
+        The backend is powered by Node.js, Express, and MongoDB, utilizing Multer for file uploads and Cloudinary for scalable media storage.`,
       frontend: "Angular 17, Tailwind CSS, Standalone ",
       backend: "Node.js, Express, Multer, Cloudinary",
       database: "MongoDB",
