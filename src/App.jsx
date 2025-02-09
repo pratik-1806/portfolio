@@ -64,10 +64,11 @@ function About() {
             viewport={{ once: true }}
           >
             Experienced Senior Software Engineer with {`${y - (m < 0 ? 1 : 0)} years and ${(m + (m < 0 ? 12 : 0))} months`} experience in full-stack development,
-             specializing in Node.js backend and Angular frontend. Skilled in designing scalable RESTful APIs,
+             specializing in Angular frontend and Node.js backend. Skilled in modern frontend development, 
+             crafting dynamic, user-friendly UIs with Angular, responsive design, and seamless API integration. Equally proficient in 
+             designing scalable RESTful APIs,
               database management (SQL, NoSQL), authentication, and server-side logic, 
-              ensuring secure and efficient backend solutions. Equally proficient in modern frontend development, 
-              crafting dynamic, user-friendly UIs with Angular, responsive design, and seamless API integration. 
+              ensuring secure and efficient backend solutions. 
               Strong in collaborative development, Agile methodologies, version control (Git), and problem-solving to deliver high-quality, 
               scalable web applications. Passionate about building end-to-end solutions that enhance performance, security, 
               and user experience.
