@@ -45,10 +45,11 @@ function About() {
       variants={fadeInUp}
       transition={{ duration: 0.7 }}
     >
-       <div className="container mx-auto p-1 mb-6 text-center bg-gray-300">
+       
+      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto py-1 mb-6 text-center bg-gray-300">
         <h2 className="text-3xl font-bold mb-4 mt-4  transition-transform duration-300 hover:scale-105 ">About Me</h2>
         </div>
-      <div className="container mx-auto px-4 text-center">
       {/* <div className="bg-gray-300  text-center py-4 mb-12">
       <h2 className="text-3xl font-bold text-center  ">About Me</h2>
       </div> */}
