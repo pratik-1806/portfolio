@@ -14,7 +14,7 @@ const d = new Date(), y = d.getFullYear() - 2022, m = d.getMonth();
 // Header component with navigation links.
 function Header() {
   return (
-    <header className="bg-gray-800 text-white py-4">
+    <header className="bg-gray-800 text-white py-4 fixed top-0 left-0 w-full shadow-md z-50">
       <motion.nav 
         className="container mx-auto flex justify-center gap-8"
         initial="hidden"
@@ -22,7 +22,9 @@ function Header() {
         variants={fadeInUp}
         transition={{ duration: 0.5 }}
       >
+        <a href="#home" className="hover:underline hover:font-bold  hover:text-slate-300">Home</a>
         <a href="#about" className="hover:underline hover:font-bold hover:text-slate-300">About</a>
+        <a href="#skills" className="hover:underline hover:font-bold  hover:text-slate-300">Skills</a>
         <a href="#projects" className="hover:underline hover:font-bold  hover:text-slate-300">Projects</a>
         <a href="#resume" className="hover:underline hover:font-bold  hover:text-slate-300">Resume</a>
         <a href="#contact" className="hover:underline hover:font-bold  hover:text-slate-300">Contact</a>
@@ -43,9 +45,16 @@ function About() {
       variants={fadeInUp}
       transition={{ duration: 0.7 }}
     >
-      <div className="container mx-auto px-4 flex flex-col items-center">
-        <h2 className="text-3xl font-bold mb-8 transition-transform duration-300 hover:scale-105">About Me</h2>
-        <div className="flex flex-col md:flex-row items-center gap-8 ">
+       <div className="container mx-auto p-1 mb-6 text-center bg-gray-300">
+        <h2 className="text-3xl font-bold mb-4 mt-4  transition-transform duration-300 hover:scale-105 ">About Me</h2>
+        </div>
+      <div className="container mx-auto px-4 text-center">
+      {/* <div className="bg-gray-300  text-center py-4 mb-12">
+      <h2 className="text-3xl font-bold text-center  ">About Me</h2>
+      </div> */}
+       
+        <div className="container mx-auto px-4 flex flex-col items-center">
+        <div className="flex flex-col md:flex-row items-center gap-8  ">
           {/* Replace '/profile.jpg' with your actual image path */}
           <motion.img 
             src="1000170642.jpg" 
@@ -74,6 +83,8 @@ function About() {
               and user experience.
           </motion.p>
         </div>
+        </div>
+        
       </div>
     </motion.section>
   );
@@ -99,6 +110,7 @@ function Projects() {
   //   // Add more projects as needed.
   // ];
   // State to track the currently selected project for the modal
+    // eslint-disable-next-line no-undef
     const [selectedProject, setSelectedProject] = useState(null);
   
     // Handler to close the modal
@@ -117,7 +129,10 @@ function Projects() {
       transition={{ duration: 0.7 }}
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">My Projects</h2>
+      <div className="bg-gray-300  text-center py-4 mb-12">
+      <h2 className="text-3xl font-bold text-center  ">My Projects</h2>
+      </div>
+        
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 ">
           {projects.map((project) => (
             <motion.div 
@@ -234,7 +249,9 @@ function Resume() {
       transition={{ duration: 0.7 }}
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">My Resume</h2>
+      <div className="bg-gray-300  text-center py-4 mb-12">
+      <h2 className="text-3xl font-bold text-center  ">My Resume</h2>
+      </div>
         <p className="text-lg mb-6">
           Download my resume to learn more about my professional experience, skills, and education.
         </p>
@@ -298,6 +315,47 @@ function Footer() {
   );
 }
 
+const Skills = () => {
+  const skills = [
+    { name: "Angular", level: "Intermediate" },
+    { name: "React", level: "Intermediate" },
+    { name: "NodeJS / ExpressJS", level: "Intermediate" },
+    { name: "MongoDB", level: "Beginner" },
+    { name: "HTML", level: "Intermediate" },
+    { name: "Javascript", level: "Intermediate" },
+    { name: "Typescript", level: "Intermediate" },
+  ];
+
+  return (
+    <motion.section 
+    id="skills" 
+    className="py-16 bg-gray-100"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+    variants={fadeInUp}
+    transition={{ duration: 0.7 }}
+  >
+    <div className="text-center container mx-auto px-4 ">
+      {/* Header */}
+      <div className="p-4 bg-gray-300">
+        <h1 className="text-4xl font-bold">Skills</h1>
+      </div>
+
+      {/* Skills List */}
+      <div className="mt-8">
+        {skills.map((skill, index) => (
+          <div key={index} className="my-4">
+            <h2 className="text-2xl font-semibold">{skill.name}</h2>
+            <p className="text-red-500">{skill.level}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+    </motion.section>
+  );
+};
+
 // Main App component.
 function App() {
   return (
@@ -306,6 +364,7 @@ function App() {
       <Hero/>
       <main>
         <About />
+        <Skills/>
         <Projects />
         <Resume />
         <Contact />

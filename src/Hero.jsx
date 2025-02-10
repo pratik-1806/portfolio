@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { motion } from 'framer-motion';
 
 // Container variant to stagger children animations.
@@ -26,7 +26,7 @@ const childVariants = {
 function Hero() {
   return (
     <motion.section
-      id="hero"
+      id="home"
       className="relative h-screen flex items-center justify-center text-center bg-cover bg-center"
       style={{
         backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/002/099/443/large_2x/programming-code-coding-or-hacker-background-programming-code-icon-made-with-binary-code-digital-binary-data-and-streaming-digital-code-vector.jpg')",
@@ -52,7 +52,7 @@ function Hero() {
           className="text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg hover:text-slate-200  hover:scale-101"
           variants={childVariants}
         >
-          Hello, I'm Pratik Pansare
+          Hello, I&apos;m Pratik Pansare
         </motion.h1>
         <motion.p 
           className="text-lg md:text-2xl text-gray-200 mb-8 drop-shadow-md"
