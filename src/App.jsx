@@ -58,9 +58,9 @@ function About() {
         <div className="flex flex-col md:flex-row items-center gap-8  ">
           {/* Replace '/profile.jpg' with your actual image path */}
           <motion.img 
-            src="1000170642.jpg" 
+            src="image.jpg" 
             alt="Profile" 
-            className="w-40 h-40 rounded-full shadow-lg object-fill transition-transform duration-300 hover:scale-103"
+            className="w-60 h-90 shadow-lg object-fill border-2 border-blue-500 rounded-2xl transition-transform duration-300 hover:scale-103"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
