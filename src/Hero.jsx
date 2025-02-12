@@ -67,6 +67,12 @@ function Hero() {
         >
           Know More
         </motion.a>
+        <motion.p 
+          className="text-lg md:text-2xl font-bold text-gray-200 mb-8 drop-shadow-md mt-4"
+          variants={childVariants}
+        >
+          Serving Notice Period
+        </motion.p>
       </div>
     </motion.section>
   );
