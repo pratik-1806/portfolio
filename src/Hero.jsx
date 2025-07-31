@@ -30,7 +30,7 @@ function Hero() {
       className="relative h-screen flex items-center justify-center text-center bg-cover bg-center"
       style={{
         backgroundImage: "url('https://static.vecteezy.com/system/resources/previews/002/099/443/large_2x/programming-code-coding-or-hacker-background-programming-code-icon-made-with-binary-code-digital-binary-data-and-streaming-digital-code-vector.jpg')",
-        backgroundSize: 'cover',
+        backgroundSize: 'content',
         backgroundPosition: 'center',
         
       }}
